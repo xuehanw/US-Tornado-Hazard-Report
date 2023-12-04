@@ -35,7 +35,7 @@ Variables used in the system design:
 Given our focus on the number of tornadoes and their impact on states, we filtered out specific variables during the data cleaning process for use in our system. Alongside variable selection, we conducted data cleaning to identify and address any NA values and ensure consistent data formats, such as checking if there’s any data type errors in numbers or dates. All these preprocessing steps were performed using R Studio.
 
 | Variable  | Definition |
-| ------------- | ------------- |
+| --------- | -----------|
 | yr    | year - from 2010 to 2022  |
 | mo    | month |
 | st    | state - two letter postal abbreviation |
@@ -51,12 +51,12 @@ Data Transformation and Statistical Analysis:
 After data cleaning,  Our dataset still contains up to 160,000 records since the records cover 12 years. Considering the potential impact on chart rendering speed due to the statistical and integration processes in JavaScript, we opted to preprocess the data using R studio. The data was aggregated by year, month, and state, facilitating ease of use in system design. To complete this, we conducted counts for tornado occurrences and casualties on a monthly basis, which is more insightful to examine the cumulative tornado count, injuries, and property losses than viewing with data points. Additionally, to gain a clearer understanding of tornado distribution across states, we conducted state-level statistics. After conducting these calculations on the data using R, additional basic statistics such as maximum and minimum values are computed using JavaScript.
 
 
-## Intended visualization design
+## Intended Visualization Design
 
 ## Final Design and Implementation
 
-## Story-telling with our data
+## Story-telling with Our Data
 
-## Discussion of design and development process
+## Discussion of Design and Development Process
 
 ## Ethical and Societal Considerations
