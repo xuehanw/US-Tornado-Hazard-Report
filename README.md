@@ -1,5 +1,5 @@
 # US-Tornado-Hazard-Report
-This system is developed by Wan-Ting Liao, Xuehan Wang, Yiwen Lou.
+This system is developed by Wan-Ting Liao, Xuehan Wang, Yiwen Lou, which provided the tronado occurrence and damage report from 2010 to 2022.
 
 ## Introduction
 ### Motivation
