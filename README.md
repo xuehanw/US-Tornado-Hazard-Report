@@ -10,13 +10,14 @@ The primary goal of this project is to develop a comprehensive tornado hazard re
 
 ### Questions to answer
 As this system provides yearly and monthly analyses of tornado trends, users might be interested in exploring specific aspects and expect answers to the following questions:
-1. Tornado occurrence:
+
+Tornado occurrence:
 - Which state, in which year, has the highest occurrence of tornadoes?
 - In which month do tornadoes occur most frequently?
 - During which season do tornadoes have a higher occurrence, and in which regions do they mainly occur? For example, is there a difference in tornado occurrence between summer and winter?
 - Is there any contrast between recent years and ten years ago?
 
-2. Loss and Casualties:
+Loss and Casualties:
 - In which state, in which year, do tornadoes cause the highest property loss and casualties?
 - In which month are the highest losses and casualties recorded?
 - Does a higher occurrence of tornadoes correlate with increased property loss and casualties?
@@ -33,10 +34,17 @@ https://www.spc.noaa.gov/wcm/data/SPC_severe_database_description.pdf
 Variables used in the system design:
 Given our focus on the number of tornadoes and their impact on states, we filtered out specific variables during the data cleaning process for use in our system. Alongside variable selection, we conducted data cleaning to identify and address any NA values and ensure consistent data formats, such as checking if there’s any data type errors in numbers or dates. All these preprocessing steps were performed using R Studio.
 
-| First Header  | Second Header |
+| Variable  | Definition |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| yr    | year - from 2010 to 2022  |
+| mo    | month |
+| st    | state - two letter postal abbreviation |
+| om    | tornado number |
+| inj   | injuries |
+| fat   | fatalities |
+| loss  | estimated property loss information in millions of dollars |
+| closs | estimated crop loss in millions of dollars |
+
 
 ## Intended visualization design
 
