@@ -1,5 +1,5 @@
 # US-Tornado-Hazard-Report
-
+This system is developed by Wan-Ting Liao, Xuehan Wang, Yiwen Lou.
 
 ## Introduction
 ### Motivation
