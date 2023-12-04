@@ -55,7 +55,12 @@ After data cleaning,  Our dataset still contains up to 160,000 records since the
 
 ## Final Design and Implementation
 
+<img width="500" alt="Screenshot 2023-12-04 at 5 48 20 PM" src="https://github.com/xuehanw/US-Tornado-Hazard-Report/assets/132614570/aa8f6262-10ad-47b0-9ae9-8728a2b2a53f">
+<img width="500" alt="Screenshot 2023-12-04 at 5 48 32 PM" src="https://github.com/xuehanw/US-Tornado-Hazard-Report/assets/132614570/e1b1fb39-a4ce-4c65-bb5d-749464734f2e">
+
+
 ## Story-telling with Our Data
+
 
 ## Discussion of Design and Development Process
 
