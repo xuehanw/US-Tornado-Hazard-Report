@@ -74,7 +74,7 @@ Under the header and introduction are our tornado map and two statistical charts
 Our original design of map was to use multiple colors to represent the number of tornadoes. However, we found that this design could be confusing and not easily convey the severity. Therefore, we changed the color to a 'gray and red' scale. Gray indicates that no tornadoes occurred in that state, while red indicates the occurrence of tornadoes. The darker the red color, the higher the tornado count.
 Additionally, when we hover over a state, it will turn yellow, and a tooltip with more detailed information will appear. In the final design, we included more information than in the original design, including tornado number, injuries number, fatalities number, total loss, and total crop loss.
 
-<img width="939" alt="Screenshot 2023-12-04 at 6 00 45 PM" src="https://github.com/xuehanw/US-Tornado-Hazard-Report/assets/132614570/c2dfdbb0-d534-4a85-aef6-6f39dc7d612e">
+<img width="600" alt="Screenshot 2023-12-04 at 6 00 45 PM" src="https://github.com/xuehanw/US-Tornado-Hazard-Report/assets/132614570/c2dfdbb0-d534-4a85-aef6-6f39dc7d612e">
 
 ### Drop-down Menu
 There are three drop-down menus above the maps. In contrast to the original design, which only had the year as our selection, we have included month and state as additional selections. The purpose of this modification is to allow users to easily check the monthly number of tornadoes since tornado influences might vary in different seasons.
@@ -86,7 +86,33 @@ In our original design, the intention was to present yearly statistics by state,
 
 
 ## Story-telling with Our Data
+We provided two user cases as examples to help users understand how they can use our system to do any comparison and further analysis.
 
+### Comparison of Tornado Occurrence in Different Seasons
+In the first case, we envision users interested in determining which season poses a higher risk of tornadoes. This information can be easily discerned through the distribution of tornadoes on the map by adjusting the year and month settings. For this comparison, we use two years (2022 and 2021) as examples, defining December to February as the winter season and June to August as the summer season.
+Upon comparison, we observed an increased occurrence of tornadoes in the south and southeast during the winter season of 2022. However, tornadoes were more widespread and frequent during the summer season. This pattern was consistent in 2021 as well. Based on these results, users can understand that tornadoes are more likely to occur in the summer. Consequently, if planning travel in the US, extra caution may be warranted during the summer months.
+
+#### Tornado occurrence in 2022 winter
+![tornadoes in winter(2022)](https://github.com/xuehanw/US-Tornado-Hazard-Report/assets/132614570/0928c597-51c6-4be3-aa0d-e25168c2f33e)
+
+#### Tornado occurrence in 2022 summer
+![summer tornado in 2022](https://github.com/xuehanw/US-Tornado-Hazard-Report/assets/132614570/6542c5a5-ab12-4902-8fd3-70aede2554be)
+
+#### Tornado occurrence in 2021 winter
+![winter tornado (2021)](https://github.com/xuehanw/US-Tornado-Hazard-Report/assets/132614570/360e7f06-b927-4cb9-8859-451f1a4f8b3e)
+
+#### Tornado occurrence in 2021 summer
+![summer tornado in 2021](https://github.com/xuehanw/US-Tornado-Hazard-Report/assets/132614570/29f11d39-1a52-447b-bc0a-5f0346547a89)
+
+### Comparison Between Two States
+In this case, we consider that users might be interested in comparing tornado occurrences in different states. To illustrate, we have chosen to compare statistical charts for North Carolina and Florida as an example. Instead of limiting the comparison to a single year, we have extended it to three years to capture long-term trends.
+Upon comparison, we observed that Florida experiences tornadoes consistently throughout the year and across a broader range of times. This information suggests that, for users deciding between North Carolina and Florida as a place to live, the higher risk of tornadoes in Florida might discourage them from choosing that state.
+
+#### Tornado occurrence in North Carolina from 2020 to 2022
+![NC_tornado(2022-2020)](https://github.com/xuehanw/US-Tornado-Hazard-Report/assets/132614570/2ded6379-8321-4fe7-b982-7f7eb0a96544)
+
+#### Tornado occurrence in Florida from 2020 to 2022
+![FL_tornado(2020-2022)](https://github.com/xuehanw/US-Tornado-Hazard-Report/assets/132614570/c910d528-1dde-477d-8e66-9eb44b676955)
 
 
 ## Discussion of Design and Development Process
