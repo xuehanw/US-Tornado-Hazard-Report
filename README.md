@@ -1,5 +1,5 @@
 # US-Tornado-Hazard-Report
-This system is developed by Wan-Ting Liao, Xuehan Wang, Yiwen Lou, which provides the tornado occurrence and damage report from 2010 to 2022.
+The tornado map system has been developed by Wan-Ting Liao, Xuehan Wang, and Yiwen Lou. It offers information on tornado occurrences and damage reports spanning from 2010 to 2022.
 
 ## Introduction
 ### Motivation
@@ -115,8 +115,30 @@ Upon comparison, we observed that Florida experiences tornadoes consistently thr
 ![FL_tornado(2020-2022)](https://github.com/xuehanw/US-Tornado-Hazard-Report/assets/132614570/c910d528-1dde-477d-8e66-9eb44b676955)
 
 
-## Challenges
+## Challenges and Solutions
+### Data Inconsistency
+While creating a bar chart illustrating property losses caused by tornadoes, we noticed that some bars extended beyond the expected range. Upon reviewing the original data, we identified a discrepancy: the data documentation specifies the unit as million dollars, yet certain values are recorded without this unit (e.g., 1000000). This inconsistency does not align with the intended scale, resulting in losses exceeding a trillion dollars for events in a single month. Approximately 250 data points exhibit this issue, particularly in the data recorded after 2015. We suspect that there might be an incorrect conversion in the data, leading to this discrepancy. To address this inconsistency, we have decided to rectify the values recorded after 2015 by dividing them by 1 million.
 
+### Refining Data Visualization for Tornado Occurrences
+Initially, we designed two statistical charts utilizing line charts to enhance trend observation. However, due to the sporadic nature of tornado occurrences, the inclusion of lines became less informative, especially when the number frequently reaches 0. As a result, we have decided not to include lines in our bar chart. This adjustment aims to better represent the data and provide a clearer visual presentation, particularly in cases where tornadoes are infrequently reported.
+
+### Challenges in Implementation
+Originally, our design included a feature where users could click on a state, prompting changes in the statistical charts. However, during implementation, we encountered difficulties in achieving this functionality. Subsequently, we modified the design to incorporate a drop-down menu, allowing users to select the state. While this compromise design achieves similar goals, it is somewhat less user-friendly. During testing, checking a single state posed no significant issues. However, when attempting to compare different states simultaneously, it became cumbersome to locate specific states within the drop-down options. Therefore, the optimal design would integrate both functions seamlessly into the system.
 
 
 ## Ethical and Societal Considerations
+### Inconsistent Data Availability
+Losses and injuries are not uniform across every state or month of the year. Initially, our focus was on discerning trends in different states over various years. However, the low frequency of tornadoes often results in zero data points, making trend identification challenging. This might lead to the misconception that certain states experience no losses or casualties. Therefore, reconsidering the analysis by state may be more appropriate.
+
+### Scale of Losses and Visibility Concerns
+The vast scale of losses poses a challenge, as extremely small values may be compressed in charts, hindering data visibility and affecting user judgment. Careful consideration of scale adjustments is essential for accurate data representation.
+
+### Ensuring Accuracy of Information
+To foster user trust, it is imperative to provide accurate and reliable data. Misinformation or errors in data visualization could lead to misunderstandings about tornado risks and preparedness. Regularly updating the data ensures alignment with the most current information, preventing misleading conclusions.
+
+### Preventing Misuse of Data
+Acknowledging the potential for data misuse is crucial. For instance, insurance companies might leverage tornado frequency data to justify premium increases in specific areas. It is essential to clearly state the intended use of the data and provide context to mitigate the risk of misuse.
+
+### Avoiding Unnecessary Alarm
+In the presentation of tornado data, it is crucial to prevent unwarranted panic or stress among the public. Accompanying visualizations with context and a proper risk assessment can contribute to maintaining a balanced perspective. By providing clear explanations and emphasizing the context of the data, users are better equipped to interpret the information without unnecessary alarm. This approach supports informed decision-making and fosters a more measured response to tornado-related insights.
+
