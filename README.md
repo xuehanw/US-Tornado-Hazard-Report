@@ -115,6 +115,8 @@ Upon comparison, we observed that Florida experiences tornadoes consistently thr
 ![FL_tornado(2020-2022)](https://github.com/xuehanw/US-Tornado-Hazard-Report/assets/132614570/c910d528-1dde-477d-8e66-9eb44b676955)
 
 
-## Discussion of Design and Development Process
+## Challenges
+
+
 
 ## Ethical and Societal Considerations
