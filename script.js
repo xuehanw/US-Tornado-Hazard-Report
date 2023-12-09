@@ -206,11 +206,12 @@ function render1(data, selectedYear, selectedState) {
     let width = 400;
     let margin = 50;
     let uniqueMonths = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    let month = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,13];
     console.log(data)
     let data_subset = data.filter(d => (d.yr == selectedYear && d.st == selectedState))
     console.log(data_subset)
     let month_tornado = new Map(data_subset.map(d => [d.mo, +d.num_tornado]));
-    for (var i in uniqueMonths) {
+    for (var i in month) {
         if ((month_tornado.has(i))) {
 
         } else {
@@ -218,8 +219,17 @@ function render1(data, selectedYear, selectedState) {
         };
     }
     console.log(month_tornado)
+    const sorted = [...month_tornado].sort(function(a,b) {
+        const keyA = parseInt(a[0], 10);
+        const keyB = parseInt(b[0], 10);
 
-    let mo_array = Array.from(month_tornado.values())
+        return keyA - keyB;});
+    
+    const map2 = new Map(sorted);
+    console.log(map2)
+
+    let mo_array = Array.from(map2.values())
+    mo_array.splice(0, 1)
     console.log(mo_array)
 
     let svg = d3.select("#tornado_chart_vis")
@@ -277,7 +287,14 @@ function render1(data, selectedYear, selectedState) {
         // .attr("x", (d,i) => x(i))
         .attr("y", d => y(d))
         .attr("height", d => height - margin - y(d))
-        .attr("width", x.bandwidth());
+        .attr("width", x.bandwidth())
+        .attr("data-tippy-content", d =>{
+            let html = "<table>"
+            + "<tr><th colspan = '5'>" + d +"</th></tr>"
+            +"</table>"
+            return html;
+        })
+        .call(s => tippy(s.nodes(), {allowHTML: true}));
 
 
     svg.selectAll(".label").data(mo_array)
@@ -316,11 +333,12 @@ function render2(data, selectedYear, selectedState) {
     let width = 400;
     let margin = 50;
     let uniqueMonths = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    let month = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,13];
     console.log(data)
     let data_subset = data.filter(d => (d.yr == selectedYear && d.st == selectedState))
     console.log(data_subset)
     let month_loss = new Map(data_subset.map(d => [d.mo, +d.sum_loss]));
-    for (var i in uniqueMonths) {
+    for (var i in month) {
         if ((month_loss.has(i))) {
 
         } else {
@@ -329,7 +347,20 @@ function render2(data, selectedYear, selectedState) {
     }
     console.log(month_loss)
 
-    let mo_array = Array.from(month_loss.values())
+    const sorted = [...month_loss].sort(function(a,b) {
+        const keyA = parseInt(a[0], 10);
+    const keyB = parseInt(b[0], 10);
+
+    return keyA - keyB;});
+    
+    const map2 = new Map(sorted);
+    console.log([...map2]);
+    // console.log(sorted)
+    
+
+
+    let mo_array = Array.from(map2.values())
+    mo_array.splice(0, 1)
     console.log(mo_array)
 
     let svg = d3.select("#damage_chart_vis")
@@ -382,18 +413,26 @@ function render2(data, selectedYear, selectedState) {
         .attr("class", "bar")
         .data(mo_array).join("rect")
         .style("fill", "steelblue")
-        .attr("x", (d, i) => x(i + 1))
+        .attr("x", (d, i) => x(i+1))
         // .attr("x", (d,i) => x(i))
         .attr("y", d => y(d))
         .attr("height", d => height - margin - y(d))
-        .attr("width", x.bandwidth());
+        .attr("width", x.bandwidth())
+        .attr("data-tippy-content", d =>{
+            let html = "<table>"
+            + "<tr><th colspan = '5'>" + d +"</th></tr>"
+            +"</table>"
+            return html;
+        })
+        .call(s => tippy(s.nodes(), {allowHTML: true}));
+
 
     svg.selectAll(".label").data(mo_array)
         .join(
             enter => enter.append("text")
                 .attr("class", "label")
                 // Position the text at the top of each bar
-                .attr("x", (d, i) => x(i + 1) + x.bandwidth() / 2) // center the text in the bar
+                .attr("x", (d, i) => x(i+1 ) + x.bandwidth() / 2) // center the text in the bar
                 .attr("y", d => y(d) - 5) // adjust the value to position the label above the bar
                 .attr("text-anchor", "middle") // center the text
                 .text(d => d.toFixed(1)) // set the text to the data value
@@ -403,7 +442,7 @@ function render2(data, selectedYear, selectedState) {
 
 
             update => update.transition().duration(500)
-                .attr("x", (d, i) => x(i + 1) + x.bandwidth() / 2) // center the text in the bar
+                .attr("x", (d, i) => x(i+1 ) + x.bandwidth() / 2) // center the text in the bar
                 .attr("y", d => y(d) - 5) // adjust the value to position the label above the bar
                 .attr("text-anchor", "middle") // center the text
                 .text(d => d.toFixed(1)),
